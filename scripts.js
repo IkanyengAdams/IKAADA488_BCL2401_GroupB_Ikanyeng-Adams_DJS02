@@ -17,7 +17,14 @@ if (!dividend || !divider) {
 if (isNaN(dividend) || isNaN(divider)) {
   document.body.innerHTML = "Something critical went wrong. PLease reload the page";
   console.error("Invalid input provided");
-  return
+  return;
+}
+
+//An invalid division should log an error in the console
+if (divider === 0) {
+  result.innerText = "Division not performed. Invalid number provided. Try again";
+  console.error("Division by zero attempted");
+  return;
 }
 
 });
